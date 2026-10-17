@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feliz Cumpleaños, Marcela 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--rosa:#e8618c;--rosa-claro:#ffd6e3;--durazno:#ffb99a;--lila:#c9a7f0;--crema:#fff6f2;--vino:#6b2243;--oro:#f2b84b}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Quicksand',sans-serif;color:var(--vino);background:linear-gradient(160deg,#ffe3ec 0%,#fff1e8 45%,#efe2ff 100%);min-height:100vh;overflow-x:hidden;line-height:1.7}
+h1,h2{font-family:'Great Vibes',cursive;font-weight:400}
+.oculto{display:none}
+.petalos{position:fixed;inset:0;pointer-events:none;z-index:0}
+.petalos span{position:absolute;top:-30px;animation:cae linear infinite;opacity:.8}
+@keyframes cae{to{transform:translateY(110vh) rotate(360deg)}}
+
+.regalo{position:fixed;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;background:radial-gradient(circle at 50% 40%,#fff 0%,#ffd6e3 70%);transition:opacity .8s}
+.regalo.fuera{opacity:0;pointer-events:none}
+.regalo-txt{font-family:'Great Vibes',cursive;font-size:clamp(2rem,8vw,3.2rem)}
+.regalo-sub{font-size:.95rem;opacity:.7}
+.caja{position:relative;width:170px;height:170px;background:none;border:0;cursor:pointer;animation:salta 1.6s ease-in-out infinite}
+.caja:focus-visible{outline:3px solid var(--vino);outline-offset:8px}
+.cuerpo,.tapa{position:absolute;left:0;right:0;margin:auto;background:linear-gradient(90deg,var(--rosa) 42%,var(--oro) 42% 58%,var(--rosa) 58%)}
+.cuerpo{bottom:0;width:150px;height:110px;border-radius:0 0 12px 12px;box-shadow:0 14px 25px rgba(107,34,67,.25)}
+.tapa{top:22px;width:170px;height:42px;border-radius:10px;transition:transform .7s cubic-bezier(.2,1.4,.4,1),opacity .7s}
+.tapa::before,.tapa::after{content:"";position:absolute;top:-26px;width:34px;height:30px;border:7px solid var(--oro);border-radius:50% 50% 0 50%}
+.tapa::before{left:50%;transform:translateX(-95%) rotate(-10deg)}
+.tapa::after{left:50%;transform:translateX(-5%) scaleX(-1) rotate(-10deg)}
+.caja.abierta{animation:none}
+.caja.abierta .tapa{transform:translateY(-140px) rotate(-25deg);opacity:0}
+@keyframes salta{50%{transform:translateY(-12px) rotate(-2deg)}}
+
+main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 1.25rem}
+main.entra{animation:aparece 1.2s ease both}
+@keyframes aparece{from{opacity:0;transform:scale(.97)}}
+.hero{text-align:center;padding:5rem 0 2rem}
+.chico{letter-spacing:.08em;opacity:.7}
+.hero h1{font-size:clamp(3rem,13vw,6rem);line-height:1.05;color:var(--rosa);text-shadow:0 3px 0 #fff,0 8px 24px rgba(232,97,140,.3)}
+.hero h1 span{color:var(--vino);font-size:1.25em}
+.hero-p{max-width:30ch;margin:1rem auto 0;font-size:1.15rem}
+h2{font-size:2.6rem;color:var(--rosa);text-align:center;margin-bottom:1rem}
+
+.torta-sec{text-align:center;padding:2rem 0}
+.torta{position:relative;width:200px;height:190px;margin:0 auto 1.5rem}
+.piso{position:absolute;left:50%;transform:translateX(-50%);border-radius:14px;background:repeating-linear-gradient(90deg,var(--rosa-claro) 0 14px,#fff 14px 28px)}
+.p1{bottom:26px;width:200px;height:56px;border-bottom:10px solid var(--rosa)}
+.p2{bottom:82px;width:140px;height:50px;border-bottom:10px solid var(--lila)}
+.plato{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:230px;height:26px;border-radius:50%;background:#fff;box-shadow:0 6px 14px rgba(107,34,67,.18)}
+.vela{position:absolute;bottom:132px;left:50%;width:10px;height:38px;margin-left:-5px;background:linear-gradient(var(--durazno),var(--rosa));border-radius:3px}
+.llama{position:absolute;top:-24px;left:50%;width:14px;height:24px;margin-left:-7px;background:radial-gradient(#fff 15%,var(--oro) 55%,transparent 72%);border-radius:50%/65% 65% 35% 35%;animation:parpadea .5s ease-in-out infinite alternate;transition:opacity .4s}
+.llama.apagada{opacity:0}
+@keyframes parpadea{to{transform:scale(1.15,.92) rotate(4deg)}}
+.btn{font:600 1rem 'Quicksand',sans-serif;color:#fff;background:linear-gradient(135deg,var(--rosa),var(--lila));border:0;border-radius:99px;padding:.8rem 1.6rem;cursor:pointer;box-shadow:0 8px 20px rgba(232,97,140,.35);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--vino);outline-offset:3px}
+.deseo{min-height:2.4rem;margin-top:1rem;font-family:'Great Vibes',cursive;font-size:1.9rem;color:var(--rosa)}
+
+.carta{background:rgba(255,255,255,.7);border:2px dashed var(--rosa-claro);border-radius:28px;padding:2rem 1.6rem;margin:1.5rem 0 3rem}
+.carta p{max-width:60ch;margin:0 auto 1rem;font-size:1.08rem}
+.lista{display:grid;gap:1rem;margin-bottom:2rem}
+.nota{background:#fff;border-radius:6px 26px 26px 26px;padding:1.1rem 1.3rem;box-shadow:0 8px 22px rgba(107,34,67,.1);border-left:6px solid var(--rosa)}
+.nota:nth-child(3n+2){border-color:var(--lila)}.nota:nth-child(3n){border-color:var(--durazno)}
+.nota b{display:block;font-family:'Great Vibes',cursive;font-weight:400;font-size:1.6rem;color:var(--rosa)}
+.form{display:grid;gap:.8rem;background:rgba(255,255,255,.75);border-radius:26px;padding:1.5rem}
+.form h3{font-family:'Great Vibes',cursive;font-weight:400;font-size:2rem;color:var(--vino)}
+input,textarea{font:inherit;padding:.8rem 1rem;border:2px solid var(--rosa-claro);border-radius:16px;background:#fff;color:var(--vino)}
+input:focus,textarea:focus{outline:none;border-color:var(--rosa)}
+.estado{min-height:1.4rem;text-align:center}
+footer{text-align:center;padding:3rem 0 2rem;font-family:'Great Vibes',cursive;font-size:1.8rem;color:var(--rosa)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.versiculo{text-align:center;background:linear-gradient(160deg,#fff 0%,var(--rosa-claro) 100%);border:2px solid #fff;border-radius:30px;padding:2.2rem 1.5rem;box-shadow:0 14px 34px rgba(232,97,140,.22)}
+.vers-tit{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--rosa);line-height:1.2;margin-bottom:1rem}
+.versiculo blockquote{max-width:46ch;margin:0 auto 1.4rem}
+.versiculo blockquote p{font-size:1.2rem;font-style:italic}
+.versiculo cite{display:block;margin-top:.3rem;font-family:'Great Vibes',cursive;font-style:normal;font-size:1.7rem;color:var(--rosa)}
+.versiculo small{opacity:.6}
+.musica{position:fixed;right:16px;bottom:16px;z-index:8;width:48px;height:48px;border:0;border-radius:50%;font-size:1.4rem;cursor:pointer;background:linear-gradient(135deg,var(--rosa),var(--lila));box-shadow:0 8px 20px rgba(232,97,140,.4)}
+.musica.pausa{opacity:.55}
+.musica:focus-visible{outline:3px solid var(--vino);outline-offset:3px}
+.musica[hidden]{display:none}
+</style>
+</head>
+<body>
+<div class="petalos" id="petalos" aria-hidden="true"></div>
+
+<section id="regalo" class="regalo">
+  <p class="regalo-txt">Marcela, tienes una sorpresa</p>
+  <button id="caja" class="caja" aria-label="Abrir el regalo">
+    <span class="tapa"></span><span class="cuerpo"></span>
+  </button>
+  <p class="regalo-sub">Toca el regalo para abrirlo</p>
+</section>
+
+<main id="pagina" class="oculto">
+  <header class="hero">
+    <p class="chico">hoy brilla una estrella más</p>
+    <h1>Feliz Cumpleaños<br><span>Marcela</span></h1>
+    <p class="hero-p">Que cada día de este nuevo año tenga el color de tus sonrisas.</p>
+  </header>
+
+  <section class="torta-sec">
+    <div class="torta" id="torta">
+      <div class="vela"><i class="llama" id="llama"></i></div>
+      <div class="piso p1"></div><div class="piso p2"></div><div class="plato"></div>
+    </div>
+    <button id="soplar" class="btn">Pide un deseo y sopla la vela</button>
+    <p id="deseo" class="deseo"></p>
+  </section>
+
+  <section class="carta">
+    <h2>Unas palabras para ti</h2>
+    <p>Hoy no es un día cualquiera: es el día en que el mundo recibió a alguien especial. Gracias por ser tan tú, por tu ternura y por todo lo bonito que le das a quienes te rodean.</p>
+    <p>Mereces un año lleno de flores, risas largas, abrazos que abriguen y sueños que se cumplan uno tras otro.</p>
+  </section>
+
+  <section class="muro">
+    <h2>Con todo mi cariño</h2>
+    <div id="lista" class="lista"></div>
+    <div class="versiculo">
+      <p class="vers-tit">Una palabra para tu corazón</p>
+      <blockquote>
+        <p>Muchas mujeres hicieron el bien; mas tú las sobrepasaste a todas.</p>
+        <cite>Proverbios 31:29</cite>
+      </blockquote>
+      <blockquote>
+        <p>Engañosa es la gracia, y vana la hermosura; la mujer que teme a Jehová, esa será alabada.</p>
+        <cite>Proverbios 31:30</cite>
+      </blockquote>
+      <small>Reina-Valera 1909</small>
+    </div>
+  </section>
+
+  <footer>Hecho con cariño para ti, Marcela 🌸</footer>
+</main>
+<button id="musica" class="musica" aria-label="Pausar o reanudar la música" hidden>🎵</button>
+<script>
+const $ = (id) => document.getElementById(id);
+
+const adornos = ['🌸','💗','✨','🌷','🎀'];
+for (let i = 0; i < 22; i++) {
+  const s = document.createElement('span');
+  s.textContent = adornos[i % adornos.length];
+  s.style.left = Math.random() * 100 + '%';
+  s.style.fontSize = 14 + Math.random() * 18 + 'px';
+  s.style.animationDuration = 9 + Math.random() * 10 + 's';
+  s.style.animationDelay = -Math.random() * 15 + 's';
+  $('petalos').appendChild(s);
+}
+
+function confeti() {
+  const colores = ['#e8618c','#f2b84b','#c9a7f0','#ffb99a','#fff'];
+  for (let i = 0; i < 90; i++) {
+    const c = document.createElement('i');
+    Object.assign(c.style, {
+      position:'fixed', zIndex:9, left:'50%', top:'55%', width:'9px', height:'14px',
+      background: colores[i % colores.length], borderRadius:'2px', pointerEvents:'none'
+    });
+    document.body.appendChild(c);
+    const x = (Math.random() - .5) * 700, y = -200 - Math.random() * 380;
+    c.animate([
+      { transform:'translate(0,0) rotate(0)', opacity:1 },
+      { transform:`translate(${x}px,${y}px) rotate(${Math.random()*720}deg)`, opacity:1, offset:.45 },
+      { transform:`translate(${x*1.2}px,${y+700}px) rotate(900deg)`, opacity:0 }
+    ], { duration: 2400 + Math.random() * 800, easing:'ease-out' }).onfinish = () => c.remove();
+  }
+}
+
+$('caja').addEventListener('click', () => {
+  iniciarMusica();
+  $('caja').classList.add('abierta');
+  confeti();
+  setTimeout(() => {
+    $('regalo').classList.add('fuera');
+    $('pagina').classList.remove('oculto');
+    $('pagina').classList.add('entra');
+    setTimeout(() => $('regalo').remove(), 900);
+  }, 1100);
+}, { once: true });
+
+$('soplar').addEventListener('click', () => {
+  $('llama').classList.add('apagada');
+  $('deseo').textContent = 'Que todos tus deseos se hagan realidad, Marcela 💫';
+  confeti();
+});
+
+const BASE = [
+  {"id":1,"nombre":"Con mucho cariño","texto":"Que este nuevo año de vida te llene de sonrisas, abrazos sinceros y momentos que se queden en el corazón.","fecha":"2026-10-17"},
+  {"id":2,"nombre":"Para ti","texto":"Eres luz donde llegas. Hoy el mundo celebra que existes, y yo también.","fecha":"2026-10-17"},
+  {"id":3,"nombre":"Un deseo","texto":"Ojalá cada sueño tuyo florezca, y que nunca te falte alguien que te recuerde lo valiosa que eres.","fecha":"2026-10-17"}
+];
+const KEY = 'mensajes-marcela';
+
+// Música de fondo (YouTube). Se inicia al abrir el regalo, que es el toque del usuario.
+const VIDEO = 'vhVBWw6rId0';
+let yt = null, sonando = false;
+function cmd(f) { if (yt) yt.contentWindow.postMessage(JSON.stringify({ event:'command', func:f, args:'' }), '*'); }
+function iniciarMusica() {
+  yt = document.createElement('iframe');
+  yt.src = `https://www.youtube.com/embed/${VIDEO}?autoplay=1&loop=1&playlist=${VIDEO}&controls=0&enablejsapi=1&playsinline=1`;
+  yt.allow = 'autoplay; encrypted-media';
+  yt.title = 'Música de fondo';
+  Object.assign(yt.style, { position:'fixed', width:'2px', height:'2px', left:0, bottom:0, opacity:.01, border:0, pointerEvents:'none' });
+  document.body.appendChild(yt);
+  sonando = true; $('musica').hidden = false;
+}
+$('musica').addEventListener('click', () => {
+  sonando = !sonando; cmd(sonando ? 'playVideo' : 'pauseVideo');
+  $('musica').classList.toggle('pausa', !sonando);
+});
+
+function pintar(m) {
+  const d = document.createElement('div'); d.className = 'nota';
+  const n = document.createElement('b'); n.textContent = m.nombre;
+  const t = document.createElement('p'); t.textContent = m.texto;
+  d.append(n, t); $('lista').appendChild(d);
+}
+function guardados() { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch { return []; } }
+async function cargar() {
+  let lista = null;
+  try { const r = await fetch('/api/mensajes'); if (r.ok) lista = await r.json(); } catch {}
+  (lista || [...BASE, ...guardados()]).forEach(pintar);
+}
+cargar();
+</script>
+</body>
+</html>
